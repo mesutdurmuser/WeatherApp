@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">WeatherApp</string>
+    <string name="location">Lokasyon</string>
+    <string name="updated_up">Güncellendi</string>
+    <string name="clear_sky">Açık hava</string>
+    <string name="temps">7°C</string>
+    <string name="min_temp">En düşük</string>
+    <string name="max_temp">En yüksek</string>
+    <string name="sunrise">Gün doğumu</string>
+    <string name="weather_time">06:40 AM</string>
+    <string name="sunset">Gün batımı</string>
+    <string name="wind">Rüzgar</string>
+    <string name="pressure">Basınç</string>
+    <string name="humidity">Nem</string>
+    <string name="created_by">Created By</string>
+    <string name="owner">Mesut</string>
 </resources>

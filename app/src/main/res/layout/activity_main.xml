@@ -9,8 +9,46 @@
     android:padding="25dp"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:id="@+id/linearLayout10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#3CF1EBF1"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#3CF1EBF1"
+            app:endIconMode="clear_text">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_city_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#3CF1EBF1"
+                android:hint="@string/city_name"
+                android:inputType="text"
+                android:lines="1"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/img_search_city"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:src="@drawable/search_icon"
+            app:tint="@color/white" />
+    </LinearLayout>
+
     <TextView
-        android:id="@+id/address"
+        android:id="@+id/tv_address"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -18,10 +56,10 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout10" />
 
     <TextView
-        android:id="@+id/updated_at"
+        android:id="@+id/tv_updated_at"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/updated_up"
@@ -29,22 +67,47 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/address" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_address" />
+
+    <ProgressBar
+        android:id="@+id/progress_loader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="64dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_updated_at" />
 
     <TextView
-        android:id="@+id/status"
+        android:id="@+id/tv_errorText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="8dp"
+        android:text="@string/something_went_wrong"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progress_loader" />
+
+    <TextView
+        android:id="@+id/tv_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="120dp"
         android:text="@string/clear_sky"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/updated_at" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_updated_at" />
 
     <TextView
-        android:id="@+id/temp"
+        android:id="@+id/tv_temperature"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -54,25 +117,25 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/status" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_status" />
 
     <TextView
-        android:id="@+id/temp_min"
+        android:id="@+id/tv_temp_min"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:text="@string/min_temp"
-        app:layout_constraintEnd_toStartOf="@+id/temp_max"
-        app:layout_constraintTop_toBottomOf="@+id/temp" />
+        app:layout_constraintEnd_toStartOf="@+id/tv_temp_max"
+        app:layout_constraintTop_toBottomOf="@+id/tv_temperature" />
 
     <TextView
-        android:id="@+id/temp_max"
+        android:id="@+id/tv_temp_max"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="108dp"
+        android:layout_marginEnd="96dp"
         android:text="@string/max_temp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/temp" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_temperature" />
 
     <LinearLayout
         android:id="@+id/linearLayout5"
@@ -107,7 +170,7 @@
             tools:ignore="TextContrastCheck" />
 
         <TextView
-            android:id="@+id/sunrise"
+            android:id="@+id/tv_sunrise"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/weather_time"
@@ -129,7 +192,7 @@
         app:layout_constraintEnd_toStartOf="@+id/linearLayout6"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/linearLayout5"
-        app:layout_constraintTop_toBottomOf="@+id/temp">
+        app:layout_constraintTop_toBottomOf="@+id/tv_temperature">
 
         <ImageView
             android:layout_width="25dp"
@@ -149,7 +212,7 @@
             tools:ignore="TextContrastCheck" />
 
         <TextView
-            android:id="@+id/sunset"
+            android:id="@+id/tv_sunset"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/weather_time"
@@ -189,7 +252,7 @@
             tools:ignore="TextContrastCheck" />
 
         <TextView
-            android:id="@+id/wind"
+            android:id="@+id/tv_wind"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/weather_time"
@@ -230,7 +293,7 @@
             tools:ignore="TextContrastCheck" />
 
         <TextView
-            android:id="@+id/pressure"
+            android:id="@+id/tv_pressure"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/weather_time"
@@ -272,7 +335,7 @@
             tools:ignore="TextContrastCheck" />
 
         <TextView
-            android:id="@+id/humidity"
+            android:id="@+id/tv_humidity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/weather_time"
@@ -316,7 +379,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/owner"
-            android:textSize="14sp"
-            tools:ignore="TextContrastCheck" />
+            android:textSize="14sp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

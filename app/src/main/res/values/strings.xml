@@ -14,4 +14,6 @@
     <string name="humidity">Nem</string>
     <string name="created_by">Created By</string>
     <string name="owner">Mesut</string>
+    <string name="city_name">Şehir</string>
+    <string name="something_went_wrong">Güncelleme uzun sürdü</string>
 </resources>

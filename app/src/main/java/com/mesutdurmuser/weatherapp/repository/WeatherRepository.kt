@@ -7,5 +7,6 @@ class WeatherRepository
 @Inject
 constructor(private val apiService: ApiService){
 
-    suspend fun getWeather() = apiService.getWeather()
+    suspend fun getWeather() = apiService.getWeather(cityName = String())
+ //   suspend fun getIcon() = apiService.getIcon()
 }

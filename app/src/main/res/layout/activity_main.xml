@@ -34,7 +34,6 @@
                 android:background="#3CF1EBF1"
                 android:hint="@string/city_name"
                 android:inputType="text"
-                android:lines="1"
                 android:maxLines="1" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -48,7 +47,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/tv_address"
+        android:id="@+id/tv_city_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -67,7 +66,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_address" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_city_name" />
 
     <ProgressBar
         android:id="@+id/progress_loader"
@@ -123,18 +122,16 @@
         android:id="@+id/tv_temp_min"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
         android:text="@string/min_temp"
-        app:layout_constraintEnd_toStartOf="@+id/tv_temp_max"
+        app:layout_constraintEnd_toStartOf="@+id/tv_temperature"
         app:layout_constraintTop_toBottomOf="@+id/tv_temperature" />
 
     <TextView
         android:id="@+id/tv_temp_max"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="96dp"
         android:text="@string/max_temp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_temperature"
         app:layout_constraintTop_toBottomOf="@+id/tv_temperature" />
 
     <LinearLayout

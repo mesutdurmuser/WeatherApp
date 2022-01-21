@@ -50,6 +50,8 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation "com.squareup.okhttp3:okhttp:4.9.0"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:2.3.0"
+
 
     // Coroutines
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3'
@@ -65,4 +67,11 @@ dependencies {
     kapt "com.google.dagger:hilt-android-compiler:2.40.1"
     implementation "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03"
     kapt "androidx.hilt:hilt-compiler:1.0.0"
+
+    // RXJAVA - Retrofit için ek/yardımcı kütüphaneler
+    implementation "io.reactivex.rxjava2:rxjava:2.2.6"
+    implementation "io.reactivex.rxjava2:rxandroid:2.1.1"
+
+    // GLIDE - Görsellerde kullanılacak olan kütüphane
+    implementation "com.github.bumptech.glide:glide:4.12.0"
 }
